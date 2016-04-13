@@ -25,3 +25,14 @@ body {
   border-radius: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+nav {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #C7041B;
+  font-weight: 600;
+  font-family: 'open_sansregular', sans-serif;
+  font-size:26px;
+}
