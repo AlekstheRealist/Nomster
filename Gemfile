@@ -10,6 +10,12 @@ gem 'sass-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use form for accepting new data from users
+gem 'simple_form'
+
+# Use pagination
+gem 'kaminari'
+
 gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
