@@ -10,6 +10,10 @@ gem 'sass-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'geocoder'
+
+gem "figaro", ">= 1.0.0"
+
 gem 'devise', '>= 3.2.4'
 
 # Use form for accepting new data from users
