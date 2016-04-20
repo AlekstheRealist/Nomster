@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    @photo = Photo.all
   end
 
   def new
