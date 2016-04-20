@@ -12,6 +12,8 @@ gem 'pg'
 
 gem 'geocoder'
 
+gem 'carrierwave'
+
 gem "figaro", ">= 1.0.0"
 
 gem 'devise', '>= 3.2.4'
