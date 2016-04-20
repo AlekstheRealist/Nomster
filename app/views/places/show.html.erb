@@ -4,7 +4,6 @@
   <br /><br />
   <p><%= @place.description %></p>
   <br />
-  <p><%= @place.photos %></p>
   <% @place.photos.each do |photos| %>
     <%= image_tag photos.picture %>
     <%= photos.caption %>
