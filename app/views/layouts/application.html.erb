@@ -24,9 +24,11 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <%= link_to new_place_path do %>
-              <i class="glyphicon glyphicon-plus"></i>
-              New Place
+            <% if user_signed_in? %>
+              <%= link_to new_place_path do %>
+                <i class="glyphicon glyphicon-plus"></i>
+                New Place
+              <% end %>
             <% end %>
           </li>
         </ul>
@@ -35,7 +37,7 @@
             <li><%= link_to 'My Profile', user_path(current_user) %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Login', '#', data: {toggle: 'modal', target: '#myModalForLogIn'} %></li>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
           <% end %>
           <li><a href="#"></a></li>
@@ -43,6 +45,36 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModalForLogIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-center" id="myModalLabel">Login</h4>
+        </div>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="modal-body">
+            <div class="form-inputs">
+              <%= f.input :email, required: false, autofocus: true %>
+              <br />
+              <%= f.input :password, required: false %>
+            </div>
+            <br />
+           
+            <br />
+
+          <%= render "devise/shared/links" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.button :submit, "Login", class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <% if notice.present? %>
     <p class="alert alert-info"><%= notice %></p>
   <% end %>
